@@ -1,0 +1,672 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f1f1ef;
+  background-image: url('background.jpg');
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+*{
+    color: white;
+    font-family:"roboto" sans-serif ;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 60px;
+  backdrop-filter: blur(2px);
+  /* border-top: 3px solid #65c0b8; */
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 400px;
+  letter-spacing: 3px;
+  color: #ffffffe2;
+  margin-left: -30px;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 35px;
+  z-index: 9999;
+}
+
+/* Base Link Style */
+.nav-links a {
+  text-decoration: none;
+  color: #0e0d0d;
+  /* 1. Crucial for ::after positioning */
+  position: relative; 
+  font-weight: 400;
+  padding-bottom: 7px; /* Add space for the underline */
+  transition: color 0.3s ease;
+}
+
+/* 2. Hover/Active Text Color Change */
+.nav-links a:hover,
+.nav-links a.active {
+  color: #44b7a4;
+  /* The transition property for color is already defined above, 
+     but keeping it here doesn't hurt. */
+  transition: color 0.3s ease-in-out;
+}
+
+/* 3. Initial State of the Underline (Starts Invisible) */
+/* TARGET: The individual link (a) */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  
+  /* The Key 🔑: Starts at 0 width */
+  width: 0; 
+  
+  height: 2px;
+  background-color: #44b7a4;
+  
+  /* Apply the transition property */
+  transition: width 0.6s ease-in-out;
+}
+
+/* 4. Hover/Active State (Expands to Full Width) */
+/* TARGET: The individual link (a) on hover/active */
+.nav-links a.active::after,
+.nav-links a:hover::after {
+  /* The Key 🔑: Expands to 100% width, which triggers the smooth animation */
+  width: 60%; 
+  /* Remove duplicate transition property here */
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 18px;
+  color: #777;
+}
+
+.social-icons i {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.social-icons i:hover {
+  color: #44b7a4;
+}
+.bio{
+padding-top: 15%;
+font-size: 50px;
+font: bolder;
+}
+#btn{
+  width: 130px;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 10px 20px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid;
+  border-radius: 20px;
+  color: #07d8fd;
+  text-align: center;
+  transition: all 0.4s ease;
+  cursor: pointer;
+ font-weight: bolder;
+ transition: opacity 3s ease;
+ text-decoration: none;
+}
+header{
+  position: relative;
+  z-index: 10000;
+}
+.text{
+  padding: 50px;
+  font-weight: bolder;
+  color: white;
+}
+.txt{
+ transition: opacity 1s ease-out;
+}
+.txt:hover{
+opacity: 0;
+}
+
+#btn:hover{
+  text-shadow:
+    0 0 5px #0c86d8,
+    0 0 10px #07e2ff,
+    0 0 20px #07e6ff,
+    0 0 40px #0762ff,
+    0 0 80px #079cff;
+}
+#btn:active{
+  transition: 0.6s ease;
+  opacity: 0;
+   
+}
+.raf{
+  color: rgba(255, 255, 255, 0);
+-webkit-text-stroke: 1px rgb(255, 255, 255);
+}
+.end{
+  font-family: sans-serif,arial;
+  padding: 20px;
+  font: bolder;
+  font-size: 14px;
+}
+.er{
+  color: #15bbdce4;
+font-size: 15px;
+cursor: pointer;
+}
+.er:hover{
+   text-shadow:
+    0 0 5px #0c86d8,
+    0 0 10px #07e2ff,
+    0 0 20px #07e6ff,
+    0 0 40px #0762ff,
+    0 0 80px #079cff;
+}
+.end {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#icon {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px; /* vertically center icon */
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+#icon i {
+  font-size: 22px;
+  color: #ffffff; /* icon color */
+  transition: color 0.3s ease;
+}
+
+#icon:hover{
+  border-color: #07d8fd; /* hover border color */
+  transform: scale(1.1);
+}
+
+#icon:hover i {
+  color: #07d8fd; /* hover icon color */
+}
+footer{
+  backdrop-filter: blur(4px)
+}
+.navbar:hover{
+  backdrop-filter: Blur(10px);
+}
+.logo:hover{
+     text-shadow:
+    0 0 5px #0c86d8,
+    0 0 10px #07e2ff,
+    0 0 20px #07e6ff,
+    0 0 40px #0762ff,
+    0 0 80px #079cff;
+}
+/* Hide the checkbox */
+#menu-toggle-checkbox {
+  display: none;
+}
+
+/* Show hamburger only on tablet and mobile */
+.navbar {
+  position: relative; /* needed for absolute dropdown */
+}
+
+/* Hide checkbox */
+#menu-toggle-checkbox {
+  display: none;
+}
+
+/* Hamburger hidden on desktop */
+.menu-toggle {
+  display: none;
+  padding-left: 60%;
+}
+.p1{
+  width: 70%;
+  font-size: 18px;
+  padding: 5px 20px;
+}
+.aboutimg{
+  height: 60vh;
+  border-radius: 10px;
+  padding: 50px  20px 20px 8rem;
+}
+.dis, .resume, .resume1 {
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100vw;
+}
+.dis{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.p2 i{
+  padding: 10px;
+  font-size: 25px;
+  color: cyan;
+}
+.abt{
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 10px 15px;
+}
+.p2{
+  font-size: 18px;
+  padding: 5px 20px;
+}
+.erw{
+  padding: 20px 5rem;
+}
+.resume{
+  padding: 4rem;
+}
+.resume li{
+  padding: 10px;
+}
+.sty{
+  text-transform: uppercase;
+  color: #ffffffc6;
+  font-weight: bolder;
+  font-size: 20px;
+}
+.resume1 li{
+padding: 10px;
+}
+.resume, .resume1 {
+  flex: 1;
+  min-width: 300px;
+  box-sizing: border-box;
+}
+.resume1{
+  padding: 4rem;
+}
+.timeline-container {
+  border-left: 2px solid cyan; 
+  padding-left: 30px;
+  position: relative;
+  margin-top: 20px;
+ }
+ .portimg{
+  width: 300px;
+  height: 300px;
+  border-radius: 30px;
+ }
+ .portall {
+  justify-content: center;   /* centers images horizontally */
+  align-items: center;       /* centers vertically (if height is set) */
+  flex-wrap: wrap;           /* allows wrapping on smaller screens */
+  gap: 20px;                 /* space between images */
+  margin-top: 20px;
+  display: flex;
+}
+.port{
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+}
+.pop{
+  display: none;
+  position: absolute;
+  width: 280px;
+  height: 20%;
+  bottom: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  border-radius: 15px 15px 15px 15px;
+  background-color: rgba(0, 0, 0, 0.53);
+}
+.port:hover .pop {
+  display: block;
+}
+.contall{
+  margin:5%;
+  display: flex;
+  flex-direction: column; /* 🔥 makes icons & text come vertically */
+  align-items: flex-start; /* or center */
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(119, 115, 115, 0.251);
+  width: auto;
+}
+.cont {
+  display: flex;
+  align-items: center; /* center icon & text vertically */
+  gap: 10px;
+}
+.cont i {
+  width: 35px;
+  height: 35px;
+  background-color: rgba(252, 252, 252, 0.5);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 35px;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+.info h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+.info p {
+  margin: 0;
+  font-size: 14px;
+  color: #3d3b3be0;
+}
+.contove{
+  display: flex;
+}
+.contend{
+  margin:5%;
+  display: flex;
+  flex-direction: column; /* 🔥 makes icons & text come vertically */
+  align-items: center; /* or center */
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(119, 115, 115, 0.251);
+  width: 100%;
+  height: auto;
+}
+.contend form{
+  padding: 30px;
+  align-items: center;
+}
+.contend input{
+padding: 10px;
+color: #0e0d0d;
+background-color: rgba(255, 255, 255, 0.162);
+width: 100%; 
+box-sizing: border-box;
+border: none;
+border-radius: 20px;
+}
+.input-row{
+  display: flex;
+  gap: 30px;
+  width: 100%;
+}
+.input-group label{
+  margin-bottom: 10px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+.subject-field {
+    width: 100%;
+    margin-top: 15px;
+}
+.subject-field label {
+    margin-bottom: 10px;
+    display: block;
+}
+.msg{
+width: 100%;
+height: 100%;
+margin-top: 15px;
+}
+.msg label
+{
+  margin-bottom: 10px;
+  display: block;
+}
+.msg input, 
+.msg textarea
+{
+    color: #0e0d0d;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .tni{
+      height: 40px;
+      width: 100px;
+      background-color:rgb(16, 255, 255) ;
+      border-radius: 30px;
+      margin-top: 15%;
+      border: none;
+      padding: 0 30px;
+      justify-self: center;
+  }
+  .tni input{
+ color: rgb(0, 0, 0);
+  }
+ /* Content Sections default-a maranjirukkanum */
+.content-section {
+display: none;
+}
+
+/* Active class irukkira content section mattum show aaganum */
+.content-section.active {
+ display: block; /* Section-a full-a kaattum */
+}
+
+/* 🔥🔥 INDHA RENDU RULES-A REMOVE PANNINGA (Naam ippo #home section use pandrom) 🔥🔥
+header center {
+    display: none;
+}
+
+header center.active {
+    display: block;
+}
+*/
+@media (max-width: 992px) {
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 26px;
+    color: #07d8fd;
+  }
+  .contove{
+    flex-direction: column;
+  }
+.input-row{
+  flex-direction: column;
+}
+.resume, .resume1 {
+    padding: 5px; /* Overrides the default 4rem padding */
+}
+.contend{
+  width: auto;
+}
+.port:hover .pop {
+  display: none;
+}
+  /* Hide nav links initially */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 100%;
+    position: absolute;
+    top: 0; 
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    text-align: center;
+    gap: 10px;
+    padding: 15px 0;
+    z-index: 9999;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+  }
+
+  /* Show nav-links when checkbox is checked */
+  #menu-toggle-checkbox:checked ~.nav-links {
+    display: flex;
+  }
+
+  /* Style links */
+  .nav-links a {
+    font-size: 18px;
+    padding: 10px 0;
+    color: white;
+  }
+  .social-icons {
+    display: none;
+  }
+  .nav-links a.active::after,
+.nav-links a:hover::after {
+  background-color: #00000000;
+}
+.resume{
+  width: auto;
+  overflow: hidden;
+}
+.resume1{
+  width: auto;
+  overflow: hidden;
+}
+.portall{
+  flex-direction: column;
+}
+.portimg{
+  width: 80%;
+  height: auto;
+}
+.cont iframe{
+  width: 230px;
+}
+.msg{
+  height: 200px;
+}
+.tni{
+  margin-top: 35%;
+}
+}
+/* 📱 Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Center everything vertically */
+  #about div[style*="display: flex"] {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  /* Resize image */
+  .aboutimg {
+    height: 40vh;
+    padding: 10px;
+  }
+  .resume, .resume1 {
+    padding: 5px; /* Overrides the default 4rem padding */
+}
+  /* Adjust text block */
+  .p1 {
+    width: 90%;
+    font-size: 16px;
+    padding: 10%;
+  }
+  .port:hover .pop {
+  display: none;
+}
+.input-row{
+  flex-direction: column;
+}
+  /* Adjust icon & info alignment */
+  .p2 {
+    flex-direction: column;
+    padding: 10px;
+    font-size: 16px;
+  }
+.contend{
+  width: auto;
+}
+  .p2 i {
+    font-size: 20px;
+    padding: 5px;
+  }
+
+  .abt {
+    font-size: 18px;
+    padding: 5px;
+  }
+
+  .erw {
+    padding: 10px;
+  }
+  .dis{
+  flex-direction: column;
+  align-items: center;
+}
+.portall{
+  flex-direction: column;
+}
+.cont iframe{
+  width: 230px;
+}
+.msg{
+  height: 200px;
+}
+.tni{
+  margin-top: 35%;
+}
+}
+
+/* 💻 Tablet Devices (max-width: 992px) */
+@media (max-width: 992px) {
+  .aboutimg {
+    height: 45vh;
+    padding: 20px;
+  }
+.input-row{
+  flex-direction: column;
+}
+.resume, .resume1 {
+    padding: 5px; /* Overrides the default 4rem padding */
+}
+  .p1 {
+    width: 80%;
+    font-size: 17px;
+  }
+.contend{
+  width: auto;
+}
+.port:hover .pop {
+  display: none;
+}
+  .p2 {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .erw {
+    padding: 10px 20px;
+  }
+  .dis{
+  flex-direction: column;
+  text-align: center;
+  width: auto;
+}
+.portall{
+  flex-direction: column;
+}
+.cont iframe{
+  width: 230px;
+}
+.msg{
+  height: 200px;
+}
+.tni{
+  margin-top: 35%;
+}
+}

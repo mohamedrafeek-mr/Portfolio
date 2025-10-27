@@ -454,6 +454,14 @@ margin-top: 15px;
  color: rgb(0, 0, 0);
  cursor: pointer;
   }
+.tni:hover{
+    text-shadow:
+    0 0 5px #0c86d8,
+    0 0 10px #07e2ff,
+    0 0 20px #07e6ff,
+    0 0 40px #0762ff,
+    0 0 80px #079cff;
+}
  /* Content Sections default-a maranjirukkanum */
 .content-section {
 display: none;

@@ -471,15 +471,6 @@ display: none;
  display: block; /* Section-a full-a kaattum */
 }
 
-/* 🔥🔥 INDHA RENDU RULES-A REMOVE PANNINGA (Naam ippo #home section use pandrom) 🔥🔥
-header center {
-    display: none;
-}
-
-header center.active {
-    display: block;
-}
-*/
 @media (max-width: 992px) {
   .menu-toggle {
     display: block;

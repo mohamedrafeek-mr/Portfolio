@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -12,6 +18,9 @@ body {
 *{
     color: white;
     font-family:"roboto" sans-serif ;
+}
+main {
+  flex: 1;
 }
 .navbar {
   display: flex;
@@ -155,15 +164,19 @@ opacity: 0;
 }
 .end{
   font-family: sans-serif,arial;
-  padding: 20px;
+  padding: 8px;
   font: bolder;
   font-size: 14px;
+  width: 100%;
+  backdrop-filter: blur(3px);
+
 }
 .er{
   color: #15bbdce4;
 font-size: 15px;
 cursor: pointer;
 }
+
 .er:hover{
    text-shadow:
     0 0 5px #0c86d8,
@@ -203,8 +216,14 @@ cursor: pointer;
 #icon:hover i {
   color: #07d8fd; /* hover icon color */
 }
-footer{
-  backdrop-filter: blur(4px)
+footer {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  bottom: 0;
+  width: auto;
 }
 .navbar:hover{
   backdrop-filter: Blur(10px);
@@ -448,6 +467,7 @@ margin-top: 15px;
       border: none;
       padding: 0 30px;
       justify-self: center;
+      cursor: pointer;
   }
   .tni input{
  color: rgb(0, 0, 0);
@@ -487,6 +507,7 @@ header center.active {
 .resume, .resume1 {
     padding: 5px; /* Overrides the default 4rem padding */
 }
+
 .contend{
   width: auto;
 }

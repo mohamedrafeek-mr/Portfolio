@@ -105,13 +105,25 @@ main {
   transition: color 0.3s ease;
 }
 
+.cnt {
+  height: 100vh; /* Full screen height */
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;     /* Centers vertically */
+  flex-direction: column;
+  text-align: center;
+  background: transparent; /* Keep it clean over black body bg */
+  margin-top: 60px;
+}
+
+
 .social-icons i:hover {
   color: #44b7a4;
 }
 .bio{
-padding-top: 15%;
+padding-top: 0;
 font-size: 50px;
-font: bolder;
+font-weight: bolder;
 }
 #btn{
   width: 130px;
@@ -281,11 +293,21 @@ footer {
   font-size: 25px;
   color: cyan;
 }
+
 .abt{
-  font-size: 20px;
-  font-weight: bolder;
-  padding: 10px 15px;
+   font-weight: 600;
+  color: white;
+  margin-right: 8px;
+  min-width: 110px; 
 }
+
+.info-row span,
+.info-row a {
+ color: #ccc;
+  font-size: 15px;
+  text-decoration: none;
+}
+
 .p2{
   font-size: 18px;
   padding: 5px 20px;
@@ -364,11 +386,25 @@ padding: 10px;
 .port:hover .pop {
   display: block;
 }
+
+.info-row {
+   display: flex;
+  align-items: center;
+  margin: 6px 0;
+  line-height: 1.8;
+}
+
+.legi{
+   width: 25px; /* fixed width keeps arrows aligned vertically */
+  text-align: center;
+  color: #00ffee;
+  font-size: 14px;
+}
 .contall{
   margin:5%;
   display: flex;
   flex-direction: column; /* 🔥 makes icons & text come vertically */
-  align-items: flex-start; /* or center */
+  align-items: center;
   gap: 10px;
   padding: 10px;
   border-radius: 10px;
